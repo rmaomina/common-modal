@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./modal.css">
+    <title>modal-test</title>
+</head>
+<body class="modal-opened">
+    <div class="wrap">
+        <p><button onclick="showModal('#asideMenu');">사이드메뉴 열기</button></p>
+        <p><button onclick="showModal('#welcomePopup');">환영 팝업</button></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet leo sit amet odio condimentum viverra ut nec
+        sapien. Vivamus malesuada sollicitudin ante, nec gravida dui fermentum et. Fusce elementum blandit sem sed tincidunt. Phasellus
+        aliquam viverra dignissim. Nullam a mauris sit amet erat convallis fringilla bibendum eu nisl. Pellentesque quis ligula sollicitudin,
+        fermentum felis at, porttitor urna. Sed lorem tellus, auctor vitae odio at, porta maximus tellus. Pellentesque aliquet, est
+        et congue convallis, leo leo interdum nibh, at posuere ex diam vel nulla. Curabitur elementum, lacus id congue sagittis,
+        neque est laoreet dui, quis facilisis justo diam vel est. Nunc sem erat, lacinia mattis imperdiet in, congue in neque. Ut
+        odio orci, commodo et imperdiet at, egestas id augue. Aliquam pharetra consectetur elementum. Integer vitae augue ut neque
+        finibus luctus id non leo. Duis eu dignissim felis. Donec volutpat enim est. Duis a lacinia nisi, a sagittis purus. Pellentesque
+        habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas rutrum non massa nec malesuada.
+        Donec porttitor sit amet lectus vitae dictum. Nulla congue consectetur nisi eu finibus. Pellentesque sit amet nunc dui. Praesent
+        fringilla sem ut libero interdum congue. Pellentesque ut massa lorem. Proin eleifend blandit velit, non rutrum purus malesuada
+        id. Cras feugiat, diam quis semper efficitur, arcu nulla luctus odio, eu ornare dui libero at dolor. Vivamus ut consectetur
+        purus. Nunc congue eros vel mauris eleifend tincidunt. Pellentesque elementum eleifend velit, in semper risus vehicula id.
+        Donec ut tristique nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur
+        gravida elit nec ante interdum, lacinia bibendum augue fermentum. In euismod massa in nulla finibus, a tempus ipsum dignissim.
+        Vestibulum sodales fringilla faucibus. Vestibulum egestas euismod dolor et fermentum. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos. Duis ac mollis quam. Quisque blandit, justo vel auctor tempus, urna
+        orci pellentesque nulla, in fermentum tortor tortor quis metus. Integer finibus lacus a tincidunt auctor. Cras eu fermentum
+        nulla. Duis efficitur lacinia quam, ut maximus massa sagittis sit amet. Pellentesque et purus et justo facilisis porttitor
+        porta ut libero. Cras eget elit id massa ornare convallis. Quisque in sapien quam. Mauris a rutrum arcu. Aliquam a nibh luctus,
+        dictum arcu nec, tempor enim. Nulla in odio eget ligula vehicula lobortis. Duis dapibus velit sed tellus elementum consectetur.
+        Cras in consectetur magna, ac viverra ante. Nulla ultrices tristique nisl molestie venenatis. Phasellus pulvinar nec massa
+        et consectetur. Donec dictum velit sagittis, pulvinar arcu at, elementum mauris. Curabitur porttitor suscipit tincidunt.
+        Nulla facilisi. Etiam pellentesque velit sit amet lacus scelerisque porta. Phasellus eleifend vel elit vel ornare. Ut congue
+        imperdiet velit, vitae gravida libero tincidunt ac. Nunc posuere bibendum nibh eget porta.</p>
+    </div>
+    <aside class="modal dim-layer" id="asideMenu">
+        <div class="modal-full">
+            <div class="modal-contents">
+                <div class="logo-box">
+                    <h2>Your Logo</h2>
+                    <a href="#" onClick="hideModal('#asideMenu');">닫기</a>
+                </div>
+                <div class="menu-box">
+                    <ul>
+                        <li>메뉴1
+                            <ul>
+                                <li><a href="#">서브메뉴1</a></li>
+                                <li><a href="#">서브메뉴2</a></li>
+                                <li><a href="#">서브메뉴3</a></li>
+                                <li><a href="#">서브메뉴4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">메뉴2</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴3</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴4</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴5</a>
+                        </li>
+                        <li>
+                            <a href="#">메뉴6</a>
+                        </li>
+                        <li>
+                            <a href="#">스크롤테스트1</a>
+                        </li>
+                        <li>
+                            <a href="#">스크롤테스트2</a>
+                        </li>
+                        <li>
+                            <a href="#">스크롤테스트3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <div class="modal modal-scale dim-fixed" id="welcomePopup">
+        <div class="modal-box">
+            <div class="modal-contents">
+                <div class="content-group">
+                    <p class="context">홍길동님 환영합니다!</p>
+                    <a class="btn-close text-hidden" href="#" onClick="hideModal('#welcomePopup');">확인</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(function(){
+
+        showModal('#welcomePopup');
+
+        $('.dim-layer').click(function(e){
+
+            console.log(e.target);
+
+            if (!$(e.target).closest('.modal-full').length) {
+                getId = $(this).attr('id');
+                hideModal('#'+getId);
+            }
+
+        });
+
+    });
+
+    function showModal(modal) {
+        $('.modal' + modal).addClass('active');
+        $('body').addClass('modal-opened');
+    }
+
+    function hideModal(modal) {
+        $('.modal' + modal).removeClass('active');
+        $('body').removeClass('modal-opened');
+    }
+    </script>
+</body>
+</html>

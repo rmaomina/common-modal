@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+body.modal-opened {
+    overflow: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -ms-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.modal.modal-scale {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.modal.dim-layer {
+    background-color: rgba(0,0,0,.35);
+}
+
+.modal.dim-fixed {
+    background-color: rgba(0,0,0,.35);
+}
+
+.modal .modal-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -ms-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+
+.modal.active .modal-full {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+.modal .modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    min-height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.modal-contents {
+}
+
+.logo-box {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.menu-box {
+    position: relative;
+    padding: 30px;
+    background-color: #eee;
+    line-height: 34px;
+}
+
+.content-group {
+    padding: 30px;
+    text-align: center;
+}
