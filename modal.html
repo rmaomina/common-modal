@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="./modal.css">
+    <link rel="stylesheet" href="./common.css">
     <title>modal-test</title>
 </head>
 <body class="modal-opened">
@@ -38,58 +39,62 @@
         Nulla facilisi. Etiam pellentesque velit sit amet lacus scelerisque porta. Phasellus eleifend vel elit vel ornare. Ut congue
         imperdiet velit, vitae gravida libero tincidunt ac. Nunc posuere bibendum nibh eget porta.</p>
     </div>
-    <aside class="modal dim-layer" id="asideMenu">
+    <aside class="modal active" id="asideMenu">
         <div class="modal-full">
-            <div class="modal-contents">
-                <div class="logo-box">
-                    <h2>Your Logo</h2>
-                    <a href="#" onClick="hideModal('#asideMenu');">닫기</a>
-                </div>
-                <div class="menu-box">
-                    <ul>
-                        <li>메뉴1
-                            <ul>
-                                <li><a href="#">서브메뉴1</a></li>
-                                <li><a href="#">서브메뉴2</a></li>
-                                <li><a href="#">서브메뉴3</a></li>
-                                <li><a href="#">서브메뉴4</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">메뉴2</a>
-                        </li>
-                        <li>
-                            <a href="#">메뉴3</a>
-                        </li>
-                        <li>
-                            <a href="#">메뉴4</a>
-                        </li>
-                        <li>
-                            <a href="#">메뉴5</a>
-                        </li>
-                        <li>
-                            <a href="#">메뉴6</a>
-                        </li>
-                        <li>
-                            <a href="#">스크롤테스트1</a>
-                        </li>
-                        <li>
-                            <a href="#">스크롤테스트2</a>
-                        </li>
-                        <li>
-                            <a href="#">스크롤테스트3</a>
-                        </li>
-                    </ul>
+            <div class="modal-box">
+                <div class="modal-contents">
+                    <div class="logo-box">
+                        <h2>Your Logo</h2>
+                        <a href="#" onClick="hideModal('#asideMenu');">닫기</a>
+                    </div>
+                    <div class="menu-box">
+                        <ul>
+                            <li>메뉴1
+                                <ul>
+                                    <li><a href="#">서브메뉴1</a></li>
+                                    <li><a href="#">서브메뉴2</a></li>
+                                    <li><a href="#">서브메뉴3</a></li>
+                                    <li><a href="#">서브메뉴4</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">메뉴2</a>
+                            </li>
+                            <li>
+                                <a href="#">메뉴3</a>
+                            </li>
+                            <li>
+                                <a href="#">메뉴4</a>
+                            </li>
+                            <li>
+                                <a href="#">메뉴5</a>
+                            </li>
+                            <li>
+                                <a href="#">메뉴6</a>
+                            </li>
+                            <li>
+                                <a href="#">스크롤테스트1</a>
+                            </li>
+                            <li>
+                                <a href="#">스크롤테스트2</a>
+                            </li>
+                            <li>
+                                <a href="#">스크롤테스트3</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </aside>
-    <div class="modal modal-scale dim-fixed" id="welcomePopup">
-        <div class="modal-box">
-            <div class="modal-contents">
-                <div class="content-group">
-                    <p class="context">홍길동님 환영합니다!</p>
-                    <a class="btn-close text-hidden" href="#" onClick="hideModal('#welcomePopup');">확인</a>
+    <div class="modal active" id="welcomePopup">
+        <div class="modal-full">
+            <div class="modal-layer">
+                <div class="modal-contents">
+                    <div class="content-group">
+                        <p class="context">홍길동님 환영합니다!</p>
+                        <a class="btn-close text-hidden" href="#" onClick="hideModal('#welcomePopup');">확인</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,12 +104,12 @@
 
         showModal('#welcomePopup');
 
-        $('.dim-layer').click(function(e){
+        $('.modal-full').click(function(e){
 
             console.log(e.target);
 
-            if (!$(e.target).closest('.modal-full').length) {
-                getId = $(this).attr('id');
+            if (!$(e.target).closest('.modal-box').length) {
+                getId = $(this).parent().attr('id');
                 hideModal('#'+getId);
             }
 
