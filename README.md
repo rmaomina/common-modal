@@ -1,4 +1,4 @@
-# component-modal
+# common-modal
  - https://github.com/rmaomina/component-modal.git
 
 ## 모달 기본
